@@ -1,0 +1,59 @@
+{
+	"name": "hash-vscode",
+	"description": "VSCode hash plugin",
+	"author": "hash-org",
+	"license": "MIT",
+	"version": "0.0.1",
+	"publisher": "hash-org",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/hash-org/hash-vscode"
+	},
+	"engines": {
+		"vscode": "^1.75.0"
+	},
+	"contributes": {
+		"languages": [
+			{
+				"id": "hash",
+				"extensions": [
+					".hash"
+				],
+				"aliases": [
+					"Hash",
+					"hash"
+				]
+			}
+		]
+	},
+	"categories": [],
+	"keywords": [
+		"multi-root ready"
+	],
+	"activationEvents": [
+		"onLanguage:hash"
+	],
+	"main": "./out/extension",
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"clean": "rm -rf out/*",
+		"compile": "tsc -b",
+		"watch": "tsc -b -w",
+		"lint": "eslint ./src --ext .ts,.tsx",
+		"test": "sh ./scripts/e2e.sh"
+	},
+	"dependencies": {
+		"vscode-languageclient": "^9.0.1"
+	},
+	"devDependencies": {
+		"@types/mocha": "^10.0.6",
+		"@types/node": "^18.14.6",
+		"@typescript-eslint/eslint-plugin": "^6.14.0",
+		"@typescript-eslint/parser": "^6.14.0",
+		"eslint": "^8.56.0",
+		"mocha": "^10.2.0",
+		"typescript": "^5.3.3",
+		"@types/vscode": "^1.75.1",
+		"@vscode/test-electron": "^2.3.8"
+	}
+}
